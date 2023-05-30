@@ -3,5 +3,4 @@ path:hover {
   stroke-width: 2px;
 }
 svg {
-  transition: transform 0.2s ease-in-out;
 }

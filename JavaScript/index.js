@@ -1,19 +1,20 @@
 window.onload = function () {
   const svg = document.querySelector(".worldMap");
   const container = document.querySelector(".container");
+  const group = document.getElementById("group");
   console.log(container);
   container.addEventListener("wheel", scaleMap);
 
   function scaleMap(event) {
     event.preventDefault();
     const scaleFactor = event.deltaY > 0 ? 0.9 : 1.1; // Adjust the scale factor as needed
-    const matrix = new DOMMatrix(svg.style.transform);
+    const matrix = new DOMMatrix(group.style.transform);
     let scaleBy = matrix.a * scaleFactor;
     const containerRect = container.getBoundingClientRect();
     const mouseX = event.clientX - containerRect.left;
     const mouseY = event.clientY - containerRect.top;
-    svg.style.transformOrigin = `${mouseX}px ${mouseY}px`;
-    svg.style.transform = `scale(${scaleBy})`;
+    group.style.transformOrigin = `${mouseX}px ${mouseY}px`;
+    group.style.transform = `scale(${scaleBy})`;
   }
 
   // Variables to store the initial position and mouse offset
@@ -39,7 +40,7 @@ window.onload = function () {
       // Update the position of the SVG element
       const newX = event.clientX - offsetX;
       const newY = event.clientY - offsetY;
-      svg.setAttribute('transform', `translate(${newX}, ${newY})`);
+      svg.setAttribute("transform", `translate(${newX}, ${newY})`);
     }
   };
 
