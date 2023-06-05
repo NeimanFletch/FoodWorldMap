@@ -1,8 +1,8 @@
 object {
-    width: 2500px;
-    height: 1000px;
+  width: 3500px;
+  height: 2000px;
 }
 path:hover {
-    stroke: purple;
-    stroke-width: 2px;
+  stroke: purple;
+  stroke-width: 2px;
 }

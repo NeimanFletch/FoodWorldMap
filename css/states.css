@@ -3,4 +3,6 @@ path:hover {
   stroke-width: 2px;
 }
 svg {
+  border-style: solid;
+  border-color: black;
 }
